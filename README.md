@@ -1,9 +1,27 @@
-# Project 2 - Machine Learning Trading Bot
+# Project 2 - Algo - Trading Bot
 
 ![AlgoTrading-challenge-image](https://user-images.githubusercontent.com/85688247/178852925-0a297d62-e9f3-426a-b95c-4a4be1cf1905.png)
 
 
+In our project we created a Stock Market trading algorithm, using Tesla (TSLA) stock as a baseline. We createdpredicitbve models using 3 techinical indicators (Simple Moving Average, Bolinger Band and Exponential Moving Average) over 5 years of Tesla stock market data. We then then evaluated the performance of the models to determine which had the best predictive power to maximise potential portfolio value. 
 
 
+## Overview
 
+* We are interested in stock market trading algotrithms
 
+* We used DataReader and yfinance (Yahoo Finance) to obtain our stock market data (TSLA)
+
+* Machine learning models we expect to utilize are:
+
+    * Random Forest
+    * Support Vector Classifier (SVC)
+    * LSTM
+
+* Technical Indicators used:
+
+    * Moving Average of Closing Prices
+    * Exponential Moving Average of Closing Prices
+    * Exponential Moving Average of Daily Return Volatility
+    * Bollinger Band
+    * Buy and Hold
