@@ -20,7 +20,7 @@ In our project we created a Stock Market trading algorithm, using Tesla (TSLA) s
 
 * Technical Indicators used:
 
-    * Moving Average of Closing Prices
+    * Simple Moving Average of Closing Prices
     * Exponential Moving Average of Closing Prices
     * Exponential Moving Average of Daily Return Volatility
     * Bollinger Band
@@ -35,6 +35,27 @@ In our project we created a Stock Market trading algorithm, using Tesla (TSLA) s
 ![Import_Data](https://user-images.githubusercontent.com/85688247/178892633-2df7840a-1370-4abd-9704-45dad4ca18e1.png)
 
 
+Then we added technical indicators for SMA 50 and 100 days, EMA 50 and 100 days, Bollinger bands for Lower, Middle and Upper limit.  
+
+#### SMA
+![sma 1](https://user-images.githubusercontent.com/85688247/178967588-b737d0f1-df85-4e69-bab0-96d99e79f15a.png)
+
+![sma 2](https://user-images.githubusercontent.com/85688247/178967682-264b8f46-06a6-403e-a518-6fd88db2814f.png)
+
+
+#### EMA 
+
+![EMA50 100](https://user-images.githubusercontent.com/85688247/178901807-4177fff0-46b8-4d9b-ae48-b7b68a7cfa6b.png)
+
+![EMA 50 v 100](https://user-images.githubusercontent.com/85688247/178967278-6ad3037f-5f45-4451-86a8-194d585f0808.png)
+
+#### Bollinger Band 
+![TSLA_BBAnd](https://user-images.githubusercontent.com/85688247/178901252-b3f6a050-11ef-4382-91b5-d651bf31b95e.png)
+
+![EMA50 100_2](https://user-images.githubusercontent.com/85688247/178901977-3160bee5-50c6-4031-a75a-3f7db7cb1416.png)
+
+
+
 ## Model Evaluation
 * Ending portfolio values/returns under each machine learning model will be used to evaluate the models
 
@@ -43,7 +64,7 @@ We wanted to create a number of machine learning models - to begin we simply exa
 
 ### Support Vector Machine (SVM)
 
-the first machine learning model evaluated was Support Vector Machine (SVM).  
+The first machine learning model evaluated was Support Vector Machine (SVM).  
 
 In machine learning, SVMs are supervised learning models with associated learning algorithms that analyze data for classification and regression analysis.  Given a set of training examples, each marked as belonging to one of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier.  An SVM maps training examples to points in space so as to maximise the width of the gap between the two categories.  New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.
 
@@ -64,7 +85,8 @@ We then acalculated Actual Returns using percentage change and Strategy Returns 
 We then split the Data into training and testing
 ![z-2 SMA Training and Testing](https://user-images.githubusercontent.com/85688247/178898528-7c21e1d2-1a92-40c4-b69b-7b05d90c4d3f.png)
 
-The classification report assiciated with SVC model predictions
+The objective of SVC is to fit the data you provide, returning a ‘best fit’ hyperplane that divides or categorises your data - from there you can feed some features to your classifier to see what the predicted class is.
+
 ![Z3 SVC Model Prediction](https://user-images.githubusercontent.com/85688247/178899176-7f635791-161f-43f0-8d46-fb0d6f73df04.png)
 
 ![Z4 SVC Actual vs Predicted Returns ](https://user-images.githubusercontent.com/85688247/178899470-656e0027-c800-4e4f-b032-b32b15d8e6b7.png)
@@ -72,23 +94,21 @@ The classification report assiciated with SVC model predictions
 We then backtested the model to evaluate performance
 ![z5 - backtest](https://user-images.githubusercontent.com/85688247/178899643-1063b1f9-ed0e-4d04-abba-b07776605a82.png)
 
-#### Strategy Return based on EMA
-![EMA50 100](https://user-images.githubusercontent.com/85688247/178901807-4177fff0-46b8-4d9b-ae48-b7b68a7cfa6b.png)
+#### Comparison of AdaBoost, Random Forest Classifier - 
 
-![EMA50 100_2](https://user-images.githubusercontent.com/85688247/178901977-3160bee5-50c6-4031-a75a-3f7db7cb1416.png)
+To begin we simply examined the ‘Strategy Returns’ performance of Tesla stocks - based on different technical indicators.
 
-#### Strategy Return based on Bollinger Band
-![TSLA_BBAnd](https://user-images.githubusercontent.com/85688247/178901252-b3f6a050-11ef-4382-91b5-d651bf31b95e.png)
+![Actual vs Strategy](https://user-images.githubusercontent.com/85688247/178968137-1e28cd9d-886d-43e3-a573-8042a097edd4.png)
+
+To take it another step further we then wanted to evaluate a Machine Learning Classifier, first, up we picked Random Forest Classifier. Using the original training data as a baseline model we fit  model with the new classifier, and backtested the new model to evaluate its performance.
+
+![Random Forest](https://user-images.githubusercontent.com/85688247/178968840-174e65d4-278d-4333-8305-c6271c8a7b4b.png)
+
+We then looked at AdaBoost Classifier as a comparison supervised learning model, again using the predictions and testing data to create predicted, actual and strategy returns.
+
+![AdaBoost](https://user-images.githubusercontent.com/85688247/178969032-98e7fc05-c071-43cc-8bf7-90029a007c65.png)
 
 
-### Random Forest Trading
-With the Random Forest, we create a trading signals CSV file based on (1) Simple Moving Average of Closing Prices (2) Exponential Moving Average of Closing Prices, and (3) Bollinger Bands. These signals are expressed as 1, or -1 to Buy or Sell respectively.
-
-#### Strategy Return based on SMA
-
-#### Strategy Return based on EMA
-
-#### Strategy Return based on Bollinger Band
 
 
 ### Long short-term memory (LSTM)
