@@ -104,16 +104,26 @@ Now for each day we have the closing price for the day, the open price for the d
 ![lstm 2](https://user-images.githubusercontent.com/85688247/178902574-03b8216a-a6cd-40c7-8fe8-ea344d27ebe0.png)
 
 To initial dataframe we added SMA for 5 and 50 day, and removed the first 50 days since they didn’t have the 50 days moving average.  
+
 ![lstm 3](https://user-images.githubusercontent.com/85688247/178902869-578e3fe3-7bc3-4a4b-9914-4748164cf578.png)
 
 The dataframe was then used to Train and Test sets (70/30) and defined the LTSM model. We then run the model with 100 epochs and a batch size of 30. Other epoch and batch size amounts were used but the significant increase in time was not worth the small incremental decrease in 'val_loss'.
 
 ![lstm 4](https://user-images.githubusercontent.com/85688247/178903067-c3d15cb7-d80a-40d4-967d-0593d342440b.png)
 
+Next, we can plot the predicted versus actual values. Notice that the predicted values are almost identical to the actual values; however, they are always one step ahead:
+
 ![lstm 5](https://user-images.githubusercontent.com/85688247/178903178-ba660522-f1fe-4e14-b087-943384caa343.png)
 
+We stay in the market when the predicted price for the day's close is greater than the current day's opening price and stay out otherwise. 
+
 ![lstm 6](https://user-images.githubusercontent.com/85688247/178903292-bf5c6031-1460-4ff2-9420-5266251c70c1.png)
+
+Now we can compare our LSTM-trading-strategy with the both a buy and hold strategy and a moving average strategy (both 5-day and 50-day). In order to do so we compute the corresponding vectors v_bh and v_ma (short and long) which select the days during which we are going to stay in the market.
 
 ![lstm 7](https://user-images.githubusercontent.com/85688247/178903401-8bbe49a2-f695-41c2-9004-e4fa736278f1.png)
 
 
+### Conclusion:
+
+ADAboost model gave us the best positive returns, closely followed by SVC. The LSTM model was the weakest and produced returns far below just a buy and hold strategy.
