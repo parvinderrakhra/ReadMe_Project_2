@@ -35,7 +35,10 @@ In our project we created a Stock Market trading algorithm, using Tesla (TSLA) s
 ![Import_Data](https://user-images.githubusercontent.com/85688247/178892633-2df7840a-1370-4abd-9704-45dad4ca18e1.png)
 
 
-Then we added technical indicators for SMA 50 and 100 days, EMA 50 and 100 days, Bollinger bands for Lower, Middle and Upper limit.  
+Then we added technical indicators for SMA 50 and 100 days, EMA 50 and 100 days, Bollinger bands for Lower, Middle and Upper limit. 
+
+### Technical Indicators:
+Using the yfinance API, OHLC data for Tesla (TSLA) was imported into jupyter note book. Once imported, this data was used to calculate our technical indicators, Simple Moving Average (SMA), Exponential Moving Average (EMA) and Bollinger bands. For each of the indicators, it was calculated each of the crossover points which provided our entry and exit points in which the algorithm would use to indicate a respective trade. While in this same notebook, our data which included the OHLC data and the respective data for the indicators (i.e. the data used to graph the indicators, as well as the trade signals). This was then exported as a CSV file to be used for the models. In addition to this, in a separate note book, this data was used to create a dynamic technical financial graph using MPLFinance. This tool allows for multiple indicators to be presented in a single graph. The benefit of this was it provided a greater picture of the movements of the TSLA price. Ideally, the indicators would be graphed on this graph too as well as the net trade positions, however due to the time constraints this was not done.
 
 #### SMA
 ![sma 1](https://user-images.githubusercontent.com/85688247/178967588-b737d0f1-df85-4e69-bab0-96d99e79f15a.png)
@@ -146,4 +149,4 @@ Now we can compare our LSTM-trading-strategy with the both a buy and hold strate
 
 ### Conclusion:
 
-ADAboost model gave us the best positive returns, closely followed by SVC. The LSTM model was the weakest and produced returns far below just a buy and hold strategy.
+ADAboost gave us the best positive returns, closely followed by SVC. The LSTM model was the weakest and produced returns far below just a buy and hold strategy.
