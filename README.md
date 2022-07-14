@@ -25,3 +25,12 @@ In our project we created a Stock Market trading algorithm, using Tesla (TSLA) s
     * Exponential Moving Average of Daily Return Volatility
     * Bollinger Band
     * Buy and Hold
+
+
+### Libraries Used:
+![Library](https://user-images.githubusercontent.com/85688247/178892027-4e999ab8-ecd6-4400-b3d3-454b52b73383.png
+
+### Data Import:
+![Import_Data](https://user-images.githubusercontent.com/85688247/178892198-edadecae-ef2a-4c65-98cc-3e7ec3e858c8.png)
+
+
